@@ -1,10 +1,7 @@
 const express = require('express');
-const router = new express.Router();
 
-const HelloWorldCtrl = new (require('../controllers/helloWorld.controller'))();
+const router = express();
 
-router
-	.route('/hello-world')
-	.get(HelloWorldCtrl.sayHi);
+router.use('/', require('./routerUser'));
 
 module.exports = router;
